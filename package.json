@@ -1,0 +1,28 @@
+{
+    "name": "my-blog",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "svelte-kit dev",
+        "build": "svelte-kit build",
+        "preview": "svelte-kit preview",
+        "cli": "node ./scripts/cli.js"
+    },
+    "devDependencies": {
+        "@sveltejs/adapter-static": "^1.0.6",
+        "@sveltejs/kit": "^1.30.4",
+        "@tailwindcss/typography": "^0.5.2",
+        "autoprefixer": "^10.0.0",
+        "commander": "^10.0.0",
+        "dayjs": "^1.11.7",
+        "fuse.js": "^6.6.2",
+        "ink": "^4.0.0",
+        "ink-select-input": "^5.0.0",
+        "inquirer": "^9.0.0",
+        "mdsvex": "^0.10.0",
+        "postcss": "^8.0.0",
+        "remark-directive": "^2.0.0",
+        "svelte": "^3.0.0",
+        "tailwindcss": "^3.0.0"
+    },
+    "type": "module"
+}
