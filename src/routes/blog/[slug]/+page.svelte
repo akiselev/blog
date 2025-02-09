@@ -1,5 +1,17 @@
+<script context="module">
+  const posts = import.meta.glob("../posts/*.md", { eager: true });
+  export function getPostBySlug(slug) {
+    const key = Object.keys(posts).find(
+      (path) => path.split("/").pop().slice(0, -3) === slug
+    );
+    return posts[key];
+  }
+</script>
+
 <script>
   export let data;
+  const post = getPostBySlug(data.slug);
+  const Content = post.default;
 </script>
 
 <svelte:head>
@@ -33,7 +45,7 @@
   </header>
 
   <section class="mt-4 prose prose-lg">
-    <svelte:component this={data.content} />
+    <svelte:component this={Content} />
   </section>
 
   <div class="mt-8">
