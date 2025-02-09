@@ -4,13 +4,13 @@
 </script>
 
 <!-- Hidden toggles -->
-<input id="menu-toggle" type="checkbox" class="hidden peer" />
 <input id="dark-toggle" type="checkbox" class="hidden" />
 
 <div
   class="wrapper flex min-h-screen font-sans transition-colors duration-300"
   style="background-color: var(--bg-color); color: var(--text-color);"
 >
+  <input id="menu-toggle" type="checkbox" class="hidden peer" />
   <!-- Sidebar Navigation -->
   <nav
     class="sidebar p-4 fixed inset-y-0 left-0 w-64 border-r transition-transform duration-300
@@ -198,28 +198,34 @@
     --bg-color: #1e293b;
     --text-color: #ffffff;
   }
-  #menu-toggle:checked
-    ~ .wrapper
-    .main-header
-    label
-    .hamburger
-    span:nth-child(1) {
+  :global(
+      #menu-toggle:checked
+        ~ .flex-1
+        header.main-header
+        label[for="menu-toggle"]
+        .hamburger
+        span:nth-child(1)
+    ) {
     transform: translateY(0.25rem) rotate(45deg);
   }
-  #menu-toggle:checked
-    ~ .wrapper
-    .main-header
-    label
-    .hamburger
-    span:nth-child(2) {
+  :global(
+      #menu-toggle:checked
+        ~ .flex-1
+        header.main-header
+        label[for="menu-toggle"]
+        .hamburger
+        span:nth-child(2)
+    ) {
     opacity: 0;
   }
-  #menu-toggle:checked
-    ~ .wrapper
-    .main-header
-    label
-    .hamburger
-    span:nth-child(3) {
+  :global(
+      #menu-toggle:checked
+        ~ .flex-1
+        header.main-header
+        label[for="menu-toggle"]
+        .hamburger
+        span:nth-child(3)
+    ) {
     transform: translateY(-0.25rem) rotate(-45deg);
   }
   #dark-toggle:checked ~ .wrapper header label svg#sun-icon,
