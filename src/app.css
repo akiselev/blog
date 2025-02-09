@@ -1,1 +1,92 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 100 900;
+    font-display: block;
+    font-style: normal;
+    font-named-instance: 'Regular';
+    src: url(/fonts/Inter-roman.var.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 100 900;
+    font-display: block;
+    font-style: italic;
+    font-named-instance: 'Italic';
+    src: url(/fonts/Inter-italic.var.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Mona Sans';
+    font-weight: 200 900;
+    font-display: block;
+    font-style: normal;
+    src: url(/fonts/Mona-Sans.var.woff2) format('woff2');
+}
+
+@layer base {
+    :root {
+        color-scheme: light;
+        --shiki-color-text: theme('colors.gray.900');
+        --shiki-token-constant: theme('colors.blue.600');
+        --shiki-token-string: theme('colors.blue.600');
+        --shiki-token-comment: theme('colors.gray.500');
+        --shiki-token-keyword: theme('colors.gray.900');
+        --shiki-token-parameter: theme('colors.pink.600');
+        --shiki-token-function: theme('colors.pink.600');
+        --shiki-token-string-expression: theme('colors.blue.600');
+        --shiki-token-punctuation: theme('colors.gray.900');
+    }
+
+    :root[class~='dark'] {
+        color-scheme: dark;
+        --shiki-color-text: theme('colors.gray.50');
+        --shiki-token-constant: theme('colors.blue.400');
+        --shiki-token-string: theme('colors.blue.400');
+        --shiki-token-comment: theme('colors.gray.400');
+        --shiki-token-keyword: theme('colors.gray.50');
+        --shiki-token-parameter: theme('colors.pink.400');
+        --shiki-token-function: theme('colors.pink.400');
+        --shiki-token-string-expression: theme('colors.blue.400');
+        --shiki-token-punctuation: theme('colors.gray.50');
+    }
+}
+
+@layer utilities {
+    .scroll-padding {
+        scroll-padding-top: 3.5rem;
+    }
+
+    .visible-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: theme('colors.gray.200') theme('colors.gray.50');
+    }
+
+    .visible-scrollbar::-webkit-scrollbar {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+
+    .visible-scrollbar::-webkit-scrollbar-track {
+        background-color: theme('colors.gray.50');
+    }
+
+    .visible-scrollbar::-webkit-scrollbar-thumb {
+        background-color: theme('colors.gray.200');
+        border-radius: 0.25rem;
+    }
+
+    .dark .visible-scrollbar {
+        scrollbar-color: theme('colors.gray.800') theme('colors.gray.950');
+    }
+
+    .dark .visible-scrollbar::-webkit-scrollbar-track {
+        background-color: theme('colors.gray.950');
+    }
+
+    .dark .visible-scrollbar::-webkit-scrollbar-thumb {
+        background-color: theme('colors.gray.800');
+    }
+}
