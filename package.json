@@ -2,19 +2,21 @@
     "name": "my-blog",
     "version": "1.0.0",
     "scripts": {
-        "dev": "svelte-kit dev",
-        "build": "svelte-kit build",
-        "preview": "svelte-kit preview",
+        "dev": "vite dev",
+        "build": "vite build",
+        "preview": "vite preview",
+        "deploy": "BASE_PATH='/blog' npm run build && touch build/.nojekyll && gh-pages -d build",
         "cli": "node ./scripts/cli.js"
     },
     "devDependencies": {
-        "@sveltejs/adapter-static": "^3.0.1",
+        "@sveltejs/adapter-static": "^2.0.3",
         "@sveltejs/kit": "^2.0.0",
         "@tailwindcss/typography": "^0.5.2",
         "autoprefixer": "^10.0.0",
         "commander": "13.1.0",
         "dayjs": "^1.11.7",
         "fuse.js": "7.1.0",
+        "gh-pages": "^6.0.0",
         "ink": "5.1.0",
         "ink-select-input": "6.0.0",
         "inquirer": "12.4.1",
@@ -22,7 +24,8 @@
         "postcss": "^8.0.0",
         "remark-directive": "3.0.1",
         "svelte": "^5.19.7",
-        "tailwindcss": "^4.0.3"
+        "tailwindcss": "^4.0.3",
+        "vite": "^6.0.11"
     },
     "type": "module"
 }

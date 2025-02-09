@@ -11,9 +11,16 @@ const config = {
         adapter: adapter({
             pages: 'build',
             assets: 'build',
-            fallback: null
+            fallback: null,
+            precompress: false
         }),
-        trailingSlash: 'always'
+        // trailingSlash: 'always',
+        paths: {
+            base: process.env.BASE_PATH || ''
+        },
+        prerender: {
+            entries: ['*']
+        }
     },
     preprocess: [
         mdsvex({
