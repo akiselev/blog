@@ -14,7 +14,8 @@
   <!-- Sidebar Navigation -->
   <nav
     class="sidebar p-4 fixed inset-y-0 left-0 w-64 border-r transition-transform duration-300
-              -translate-x-full peer-checked:translate-x-0 md:translate-x-0 md:static"
+              -translate-x-full peer-checked:translate-x-0 md:translate-x-0 md:static z-50"
+    style="background-color: var(--bg-color);"
   >
     <h1
       class="text-2xl font-bold mb-6 hover:text-blue-600 transition-colors duration-300"
@@ -125,13 +126,16 @@
         <label for="menu-toggle" class="cursor-pointer">
           <div class="hamburger space-y-1">
             <span
-              class="block w-6 h-0.5 bg-slate-800 transition-transform duration-300"
+              class="block w-6 h-0.5 transition-transform duration-300"
+              style="background-color: var(--text-color);"
             ></span>
             <span
-              class="block w-6 h-0.5 bg-slate-800 transition-opacity duration-300"
+              class="block w-6 h-0.5 transition-opacity duration-300"
+              style="background-color: var(--text-color);"
             ></span>
             <span
-              class="block w-6 h-0.5 bg-slate-800 transition-transform duration-300"
+              class="block w-6 h-0.5 transition-transform duration-300"
+              style="background-color: var(--text-color);"
             ></span>
           </div>
         </label>
@@ -206,7 +210,7 @@
         .hamburger
         span:nth-child(1)
     ) {
-    transform: translateY(0.25rem) rotate(45deg);
+    transform: translateY(0.4rem) rotate(45deg);
   }
   :global(
       #menu-toggle:checked
@@ -226,7 +230,7 @@
         .hamburger
         span:nth-child(3)
     ) {
-    transform: translateY(-0.25rem) rotate(-45deg);
+    transform: translateY(-0.4rem) rotate(-45deg);
   }
   #dark-toggle:checked ~ .wrapper header label svg#sun-icon,
   #dark-toggle:checked ~ .wrapper header label svg#sun-icon-desktop {
