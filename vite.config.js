@@ -1,11 +1,10 @@
-import { defineConfig } from 'vite'
-import { sveltekit } from '@sveltejs/kit/vite'
+import { defineConfig } from "vite";
+import { sveltekit } from "@sveltejs/kit/vite";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  plugins: [sveltekit()],
+  plugins: [tailwindcss(), sveltekit()],
   build: {
-    target: 'esnext'
+    target: "esnext",
   },
-  base: process.env.BASE_PATH || '/',
-  publicDir: 'static'
-})
+});

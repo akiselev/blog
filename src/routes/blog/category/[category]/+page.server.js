@@ -14,8 +14,10 @@ export async function entries() {
   // Get unique categories
   const categories = new Set();
   publishedPosts.forEach((post) => {
-    if (post.category) {
-      categories.add(post.category);
+    if (post.categories && Array.isArray(post.categories)) {
+      post.categories.forEach((category) => {
+        categories.add(category.trim().toLowerCase());
+      });
     }
   });
 
@@ -35,7 +37,14 @@ export async function load({ params }) {
   );
 
   let posts = postsArray.filter((post) => {
-    return post.published !== false && post.category === category;
+    return (
+      post.published !== false &&
+      post.categories &&
+      Array.isArray(post.categories) &&
+      post.categories
+        .map((cat) => cat.trim().toLowerCase())
+        .includes(category.trim().toLowerCase())
+    );
   });
 
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));

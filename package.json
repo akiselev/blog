@@ -11,7 +11,9 @@
     "devDependencies": {
         "@sveltejs/adapter-static": "^2.0.3",
         "@sveltejs/kit": "^2.0.0",
+        "@sveltejs/vite-plugin-svelte": "^5.0.3",
         "@tailwindcss/typography": "^0.5.2",
+        "@tailwindcss/vite": "^4.0.5",
         "autoprefixer": "^10.0.0",
         "commander": "13.1.0",
         "dayjs": "^1.11.7",
