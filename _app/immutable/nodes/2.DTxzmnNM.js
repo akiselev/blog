@@ -1,0 +1,2 @@
+import{t as e,a as i}from"../chunks/D_dFxpY-.js";import"../chunks/Ck7iI1YT.js";var s=e(`<div class="container mx-auto p-4"><h1 class="text-4xl font-bold">Welcome to My SvelteKit Site</h1> <p class="mt-4 text-lg">This is a minimalist site with blog, poetry, search, and link blogging
+    features.</p> <p class="mt-2">Try using internal links with the syntax [[Page Title]].</p></div>`);function n(t){var a=s();i(t,a)}export{n as component};
