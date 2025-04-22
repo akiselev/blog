@@ -4,6 +4,7 @@ import directive from "remark-directive";
 import internalLinks from "./remark-internal-links.js";
 import customDirectives from "./remark-custom-directives.js";
 import customElements from "./remark-custom-elements.js";
+import {sveltePreprocess} from "svelte-preprocess";
 
 const config = {
   extensions: [".svelte", ".md"],
@@ -23,6 +24,12 @@ const config = {
     },
   },
   preprocess: [
+    sveltePreprocess({
+      sourceMap: true,
+      typescript: {
+        tsconfigFile: './tsconfig.json'
+      }
+    }),
     mdsvex({
       extensions: [".md"],
       smartypants: true,

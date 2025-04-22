@@ -1,0 +1,19 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+This is a blog that uses the following tech stack:
+
+* Svelte 5 as the frontend framework, with the new runes syntax, events, snippets, etc.
+* SvelteKit for frontend and backend routes that are deployed to Cloudflare Workers
+* Cloudflare for deployment (Workers and Pages) and CDN
+* Github Action for CI/CD
+* Tailwind CSS
+* Use `npm install -D` to add dependencies
+
+
+* REMEMBER! JAVASCRIPT STYLE DOUBLE SLASH COMMENTS ARE NOT VALID SYNTAX IN SVELTE HTML
+
+
+* DO NOT WRITE USELESS COMMENTS THAT ARE SELF EXPLANATORY
